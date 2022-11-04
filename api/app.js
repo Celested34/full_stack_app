@@ -9,6 +9,7 @@ const morgan = require("morgan");
 const userRoutes = require("./routes/userRo");
 const courseRoutes = require("./routes/courseRo");
 
+const cors = require("cors");
 
 // global error logging
 const enableGlobalErrorLogging =
@@ -20,6 +21,8 @@ app.use(express.json());
 
 // setup morgan 
 app.use(morgan("dev"));
+
+app.use(cors());
 
 //set up routes
 app.use("/api/users", userRoutes);
