@@ -19,7 +19,6 @@ class Courses extends Component {
     }
 
     
-//Renders the page according to the mockup
     render() {
         return (
             <div>

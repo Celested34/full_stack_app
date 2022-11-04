@@ -1,8 +1,7 @@
 
-import React, { Component } from "react";
-import { Route, Switch, withRouter } from "react-router-dom";
-import "./App.css";
-import axios from "axios";
+import React from "react";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+
 
 
 import Courses from "./components/Courses";
