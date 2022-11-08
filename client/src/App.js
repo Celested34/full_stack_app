@@ -11,7 +11,7 @@ const HeaderWithContext = withContext(Header);
 
 
 //routes to the components!
-const routes = () => (
+const route = () => (
   <Router>
     <div>
     <HeaderWithContext />
@@ -23,6 +23,6 @@ const routes = () => (
   </Router>
 );
 
-export default routes
+export default route
 
 //Treehouse Set up the React App - starter project files
