@@ -10,14 +10,12 @@ import Courses from "./components/Courses";
 const HeaderWithContext = withContext(Header);
 
 
-//routes to the components!
 const route = () => (
   <Router>
     <div>
     <HeaderWithContext />
       <Switch>
         <Route exact path="/" component={Courses} />
-        
       </Switch>
     </div>
   </Router>
