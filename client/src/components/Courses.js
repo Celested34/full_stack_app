@@ -1,22 +1,22 @@
 import React, {Component} from 'react';
 import { Link } from 'react-router-dom';
 
-//Creates an index of courses as the homepage
 class Courses extends Component {
     state = {
         courses: []
     }
 
-    //Fetches to the API to get a list of courses
+    //retrieve data about courses
     componentDidMount() {
         fetch('http://localhost:5000/api/courses')
-        .then(data => data.json())
-        .then( response => { 
-            this.setState({
-                courses: response
-            });
-        });
-    }
+          .then(res => res.json())
+          .then(responseData => {
+            this.setState({courses: responseData})
+          })
+          .catch(error => {
+            console.log('Error Fetching Data', error);
+          });
+    };
 
     
     render() {
