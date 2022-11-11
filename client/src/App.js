@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
-// import Header from "./components/Header";
+import Header from "./components/Header";
 
 import Courses from "./components/Courses";
 
@@ -22,7 +22,7 @@ import withContext from "./Context";
 // const UserSignUpWithContext = withContext(UserSignUp); 
 // const UserSignInWithContext = withContext(UserSignIn);
 
-// const HeaderWithContext = withContext(Header);
+const HeaderWithContext = withContext(Header);
 
 // const CreateCourseWithContext = withContext(CreateCourse);
 // const UpdateCourseWithContext = withContext(UpdateCourse);
