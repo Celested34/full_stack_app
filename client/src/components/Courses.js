@@ -12,8 +12,8 @@ class Courses extends Component {
         .then(data => data.json())
         .then( response => { 
             this.setState({
-                courses: response
-            });
+                courses: response.courses
+              })
         });
     }
 
@@ -22,7 +22,7 @@ class Courses extends Component {
         return (
             <div>
                 <div className="wrap main--grid">
-                    {(course =>
+                    {this.state.courses.map(course =>
                     <Link className="course--module course--link" to={`/courses/${course.id}`} key={course.id}>
                         <h2 className="course--label">Course</h2>
                         <h3 className="course--title">{course.title}</h3>

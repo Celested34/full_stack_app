@@ -1,42 +1,41 @@
 import React, { Component } from 'react';
-import Axios from 'axios';
 import ReactMarkdown from 'react-markdown';
+import Axios from 'axios';
+
+
 
 class CourseDetail extends Component {
     state = {
+
         course: {},
         id: this.props.match.params.id,
-        owner: {}
+        
+        
     };
     
-    componentDidMount() {
-      this.getCourse();
-      const { context } = this.props;
-      console.log(context.authenticatedUser);
-    }
 
     getCourse = async function(id = this.props.match.params.id){
       await Axios.get(`http://localhost:5000/api/courses/${id}`)
       .then( response => {
         this.setState({
-          course: response.data,
-          owner: response.data.owner
+          course: response.course,
+          owner: response.course.owner,
+          description: response.course.description,
+          
+          
         });
       });
-
+      
     }
 
+    
     render() {
-        const { context } = this.props;
-        const { course, id, owner } = this.state;
-        const { authenticatedUser } = context;
+        const { course, id, owner,  } = this.state;
         return (
           <div>
             <div className="actions--bar">
               <div className="wrap">
-                 {(
-                   authenticatedUser && course.userId === authenticatedUser.userId
-                 ) ? 
+                 
                  <React.Fragment>
                  <a className="button" href={`/courses/${id}/update`}>
                     Update Course
@@ -51,7 +50,7 @@ class CourseDetail extends Component {
                   <a className="button button-secondary" href="/">
                   Return to List
                 </a>
-                 } 
+                 
               </div>
             </div>
     
@@ -82,4 +81,5 @@ class CourseDetail extends Component {
       }
     }
 
-    export default CourseDetail
+    
+    export default CourseDetail;
