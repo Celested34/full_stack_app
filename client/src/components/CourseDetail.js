@@ -9,8 +9,7 @@ class CourseDetail extends Component {
 
         course: {},
         id: this.props.match.params.id,
-        
-        
+        owner: {},
     };
     
 
@@ -21,8 +20,7 @@ class CourseDetail extends Component {
           course: response.course,
           owner: response.course.owner,
           description: response.course.description,
-          
-          
+        
         });
       });
       
@@ -83,3 +81,5 @@ class CourseDetail extends Component {
 
     
     export default CourseDetail;
+
+
