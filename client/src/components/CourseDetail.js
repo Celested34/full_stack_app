@@ -11,19 +11,22 @@ class CourseDetail extends Component {
         id: this.props.match.params.id,
         owner: {},
     };
-    
 
-    getCourse = async function(id = this.props.match.params.id){
+
+    componentDidMount() {
+      this.getCourse();
+    }
+    
+    getCourse = async function(id = this.props.match.params.id) {
       await Axios.get(`http://localhost:5000/api/courses/${id}`)
-      .then( response => {
+      .then(response => {
+        console.dir(response.data);
         this.setState({
-          course: response.course,
-          owner: response.course.owner,
-          description: response.course.description,
-        
+          course: response.data.course,
+          owner: response.data.course.User,
+          description: response.data.course.description,
         });
       });
-      
     }
 
     
@@ -38,7 +41,7 @@ class CourseDetail extends Component {
                  <a className="button" href={`/courses/${id}/update`}>
                     Update Course
                   </a>
-                  <a className="button" href={`/courses/${id}/delete`}>
+                  <a className="button" href={`/courses/${id}/delete`} >
                     Delete Course
                   </a>
                   <a className="button button-secondary" href="/">
@@ -77,7 +80,13 @@ class CourseDetail extends Component {
           </div>
         );
       }
+
+      
+
+
+
     }
+
 
     
     export default CourseDetail;

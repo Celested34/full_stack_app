@@ -7,6 +7,8 @@ import Courses from "./components/Courses";
 
 import CourseDetail from "./components/CourseDetail";
 
+// import DeleteCourse from "./components/DeleteCourse";
+
 // import CreateCourse from "./components/CreateCourse";
 // import UpdateCourse from "./components/UpdateCourse";
 
@@ -19,6 +21,7 @@ import withContext from "./Context";
 
 //with context
 const CourseDetailWithContext = withContext(CourseDetail);
+// const DeleteCourseWithContext = withContext(DeleteCourse);
 
 // const UserSignUpWithContext = withContext(UserSignUp); 
 // const UserSignInWithContext = withContext(UserSignIn);
@@ -28,7 +31,6 @@ const CourseDetailWithContext = withContext(CourseDetail);
 // const CreateCourseWithContext = withContext(CreateCourse);
 // const UpdateCourseWithContext = withContext(UpdateCourse);
 // const UserSignOutWithContext = withContext(UserSignOut);
-// const DeleteCourseWithContext = withContext(DeleteCourse);
 
 
 const route = () => (
@@ -42,8 +44,8 @@ const route = () => (
         {/* <PrivateRoute exact path="/courses/:id/update" component={UpdateCourseWithContext} />
         <Route path="/signup" component={UserSignUpWithContext} />
         <Route path="/signin" component={UserSignInWithContext} />
-        <Route path="/signout" component={UserSignOutWithContext} />
-        <PrivateRoute path="/courses/:id/delete" component={DeleteCourseWithContext} /> */}
+        <Route path="/signout" component={UserSignOutWithContext} />} */}
+        {/* <PrivateRoute path="/courses/:id/delete" component={DeleteCourseWithContext} /> */}
       </Switch>
     </div>
   </Router>
